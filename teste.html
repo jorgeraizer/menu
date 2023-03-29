@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cabeçalho</title>
+    <style>
+        
+        body
+        {
+        width:100%; /*largura*/  
+        height:100vh; /*altura*/  
+        display: flex;
+        margin: 0px;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;   /*dsds*/     
+        background-image: url(testedefundo.png);
+        }
+
+        .d1
+        {
+            width: 100%;
+            height: 125px;
+            background-image: url(fundo.png);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            justify-items: center;
+            align-content: center;
+            align-items: center;    
+            border: 1px black solid;
+            
+        }
+         .d2
+        {
+            width: 90%;
+            height: 90px;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            justify-items: center;
+            align-content: center;
+            align-items: center;   
+        }
+         .dd1
+        {
+            width: 40px;
+            height: 40px;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            justify-items: center;
+            align-content: center;
+            align-items: center;   
+            
+        }
+        .lateral
+        {
+            
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 150px;
+            height: 100%;
+            background-color: white;
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+            text-align: center;
+            border: 1px solid black;
+        }
+        .lateral
+        {
+            width: 170px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            align-content: center;
+            position: absolute;
+            left: -175px;
+           
+        }
+        .animar
+        {
+            animation: deslizar 2s forwards;
+        }
+        @keyframes deslizar
+        {
+            0%{left:-175px;}    
+            100%{left:0px;} 
+        }
+        .opcoes
+        {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            justify-items: center;
+            align-items: center;
+            align-content: center;
+        }
+        .cadastro
+        {
+            width: 120px;
+            margin-top: 10px;
+            height: 30px;
+            background-color: blue;
+            border-radius: 40px 30px 30px 40px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            justify-items: center;
+            align-items: center;
+            align-content: center;
+        }
+
+        
+
+        
+    </style>
+</head>
+<body>
+    <div class="d1">
+        <div class="d2">
+            <div class="dd1"><img onclick="Aparecer();" src="dd1.png" alt="" width="15px"></div>
+    
+            <div class="dd1"><img src="dd2.png" alt="" width="20px"></div>
+        </div>
+    </div>
+    <div class="lateral" id="lateral"> 
+        <img src="dd3.png" alt="" width="100px">
+        <div class="opcoes">    
+            <div class="cadastro"> 
+                <img class="imagem" src="usuario.png" width="20px"> USUARIO
+            </div>
+            <div class="cadastro"> 
+                PRODUTOS
+            </div>
+            <div class="cadastro">
+                <img class="imagem" src="dd2.png" width="20px"> CARRINHO
+            </div>
+            <div onclick="Fechar();" class="fechar">FECHAR</div>
+        </div>
+    
+    </div>
+</body>
+<script>
+    function Aparecer()
+    {
+        lateral.classList.add('animar');
+    }
+
+    function Fechar()
+    {
+        lateral.classList.remove('animar');
+    }
+</script>
+</html>
